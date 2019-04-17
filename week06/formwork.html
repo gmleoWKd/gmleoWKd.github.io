@@ -58,7 +58,7 @@
             border: 0;
             border-radius: 0;
             appearance: none;
-            font-weight: 550;
+            font-weight: 740;
         }
 
         select:hover {
@@ -78,17 +78,19 @@
         }
 
         .in2 {
-            font-size: 15px;
-            height: 40px;
-            width: 40px;
-            max-height: 50px;
-            max-width: 60px;
+            font-size: 12px;
+            height: 30px;
+            width: 30px;
             cursor: pointer;
             background-color: white;
+            color: black;
+            border-radius: 100px;
+            margin-top: -4.5px;
+            margin-left: 5px;
         }
 
         .in1 {
-            height: 34px;
+            height: 15px;
         }
 
         .works {
@@ -103,7 +105,6 @@
             display: block;
             text-align: center;
             padding-top: 400px;
-
         }
 
         .shop {
@@ -115,34 +116,32 @@
             font-weight: bold;
             font-size: 20px;
         }
-        
+
         .li:hover {
-            transform: rotate(45deg);
-            transition: transform 1s;
+            color: #dddddd;
+            text-decoration: underline;
+        }
+        
+        #clock {
+            color: white;
         }
     </style>
+
 </head>
 
 <body>
     <div class="row">
         <div class="top-menu con">
+           <span id="clock"></span>
             <div class="menu-1">
-                <div class="works">WORKS OUT@</div>
+                <a class="works" href="http://worksout.co.kr/front/main.do">WORKS OUT@</a>
                 <div class="menu-box"><select aria-label="Select a stock type" name="stockType">
                         <option selected="" value="0">ALL CATEGORIES</option>
-                        <option value="">ACCESSORIES</option>
-                        <option value="">BAGS</option>
-                        <option value="">HEADWEAR</option>
-                        <option value="">JACKETS</option>
-                        <option value="">KNITS</option>
-                        <option value="">OTHER</option>
-                        <option value="">PANTS</option>
-                        <option value="">SHIRTS</option>
+                        <option value="">TOP</option>
+                        <option value="">OUTER</option>
+                        <option value="">BOTTOM</option>
+                        <option value="">BAG</option>
                         <option value="">SHOES</option>
-                        <option value="">SHORTS</option>
-                        <option value="">SWEATS</option>
-                        <option value="">SWIMWEAR</option>
-                        <option value="">T-SHIRTS</option>
                         <option value="">UNDERWEAR</option>
                     </select></div>
             </div>
@@ -150,19 +149,14 @@
                 <div class="menu-box"><select aria-label="Select a make" name="makeId">
                         <option selected="" value="0">ALL BRANDS</option>
                         <option value="">ALLTIMERS</option>
-                        <option value="">ARIES</option>
                         <option value="">ASICS</option>
                         <option value="">BRIXTON</option>
-                        <option value="">BLUEY</option>
                         <option value="">CARHARTT WIP</option>
-                        <option value="">CAV EMPT</option>
                         <option value="">CONVERSE</option>
                         <option value="">DEUS EX MACHINA</option>
-                        <option value="">EYTYS</option>
                         <option value="">FACETASM</option>
                         <option value="">HUMAN MADE</option>
                         <option value="">I-D MAGAZINE</option>
-                        <option value="">LIAM HODGES</option>
                         <option value="">LIFUL MINIMAL GARMENTS</option>
                         <option value="">LMC</option>
                         <option value="">MIRKO BUFFINI</option>
@@ -171,9 +165,7 @@
                         <option value="">OBEY</option>
                         <option value="">PUBLICATIONS</option>
                         <option value="">PATTA</option>
-                        <option value="">R13</option>
                         <option value="">RICCARDO</option>
-                        <option value="">ROA</option>
                         <option value="">STONE ISLAND</option>
                         <option value="">THISISNEVERTHAT</option>
                         <option value="">VANS</option>
@@ -191,18 +183,15 @@
                 <div class="menu-box"><select aria-label="Select a maximum distance" name="radius">
                         <option selected="" value="0">PRICE</option>
                         <option value="">~10,000 WON</option>
-                        <option value="">~20,000 WON</option>
                         <option value="">~30,000 WON</option>
-                        <option value="">~40,000 WON</option>
                         <option value="">~50,000 WON</option>
-                        <option value="">~60,000 WON</option>
                         <option value="">~70,000 WON</option>
-                        <option value="">~80,000 WON</option>
-                        <option value="">80,000 WON~</option>
+                        <option value="">90,000 WON~</option>
 
                     </select></div>
             </div>
-            <p></p>
+
+            <br />
             <div class="search">
                 <div class="search-1"><input type="tel" aria-label="Enter a Zip Code" name="zip" value="" placeholder="" maxlength="5" class="in1"></div>
             </div>
@@ -212,18 +201,18 @@
         </div>
     </div>
     <div class="top2">
-        <a class="shop title" href="#">WORKS OUT@</a>
+        <a class="shop title" href="http://worksout.co.kr/front/main.do">WORKS OUT@</a>
+        <br/><br/>
+        <a class="shop li" href="http://worksout.co.kr/front/onlineShop/goodsList.do?oneDepth=19SS&newArvl=Y&sex=M" target="_blank">shop</a>
         <p></p>
-        <a class="shop li" href="#">shop</a>
+        <a class="shop li" href="http://worksout.co.kr/front/lookbook/list.do" target="_blank">works out@ spring 19</a>
         <p></p>
-        <a class="shop li" href="#">works out@ spring 19</a>
-        <p></p>
-        <a class="shop li" href="#">archive</a>
+        <a class="shop li" href="http://worksout.co.kr/front/news/newsList.do" target="_blank">NEWS</a>
         <p></p>
         <p></p>
-        <img src="img/i-ins_w.png" alt="instagram">
-        <img src="img/i-fb_w.png" alt="facebook">
-        <img src="img/i-v_w.png" alt="vimeo">
+        <a href="https://www.instagram.com/" target="_blank"><img src="img/i-ins_w.png" alt="instagram"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="img/i-fb_w.png" alt="facebook"></a>
+        <a href="https://vimeo.com/ko/" target="_blank"><img src="img/i-v_w.png" alt="vimeo"></a>
     </div>
 
 
