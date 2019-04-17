@@ -7,10 +7,14 @@
     <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
         html {
             font-family: "Noto Sans KR", sans-serif;
         }
-
 
         .con {
             float: left;
@@ -22,18 +26,21 @@
             clear: both;
         }
 
+        body {
+            background-color: black;
+        }
+
         .top-menu {
             display: inline-block;
             vertical-align: top;
             border-radius: 10px;
-            background-color: #dfdfdf;
             text-align: left;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
             padding: 50px;
-            width: 500px;
+            width: 300px;
             height: auto;
-            margin: 10px;
-
+            margin-top: 30px;
+            margin-left: -30px;
         }
 
         .menu-box {
@@ -44,7 +51,7 @@
 
         select {
             display: inline-block;
-            width: 100%;
+            width: 200px;
             cursor: pointer;
             padding: 10px 15px;
             outline: 0;
@@ -54,31 +61,63 @@
             font-weight: 550;
         }
 
+        select:hover {
+            background-color: black;
+            color: white;
+            transition: color 1s;
+        }
+
         input {
             border: 10px;
             background-color: inherit;
             border: solid 2px white;
-            border-radius: 5px;
             display: block;
             float: left;
+            margin-right: 5px;
+            background-color: white;
         }
 
         .in2 {
-            font-size: 25px;
-            height: 50px;
-            width: 60px;
+            font-size: 15px;
+            height: 40px;
+            width: 40px;
             max-height: 50px;
             max-width: 60px;
             cursor: pointer;
-        }
-
-        .in2:hover {
-            font-size: 40px;
-            transition: font-size 1s;
+            background-color: white;
         }
 
         .in1 {
-            height: 44px;
+            height: 34px;
+        }
+
+        .works {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .top2 {
+            display: block;
+            text-align: center;
+            padding-top: 400px;
+        }
+
+        .shop {
+            color: white;
+            font-size: 15px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .li:hover {
+            text-decoration: underline;
+            
         }
     </style>
 </head>
@@ -87,157 +126,104 @@
     <div class="row">
         <div class="top-menu con">
             <div class="menu-1">
+                <div class="works">WORKS OUT@</div>
                 <div class="menu-box"><select aria-label="Select a stock type" name="stockType">
-                        <option selected="" value="0">카테고리</option>
-                        <option value="28880">New Cars</option>
-                        <option value="28881">Used Cars</option>
-                        <option value="28444">Certified Cars</option>
+                        <option selected="" value="0">ALL CATEGORIES</option>
+                        <option value="">ACCESSORIES</option>
+                        <option value="">BAGS</option>
+                        <option value="">HEADWEAR</option>
+                        <option value="">JACKETS</option>
+                        <option value="">KNITS</option>
+                        <option value="">OTHER</option>
+                        <option value="">PANTS</option>
+                        <option value="">SHIRTS</option>
+                        <option value="">SHOES</option>
+                        <option value="">SHORTS</option>
+                        <option value="">SWEATS</option>
+                        <option value="">SWIMWEAR</option>
+                        <option value="">T-SHIRTS</option>
+                        <option value="">UNDERWEAR</option>
                     </select></div>
             </div>
             <div class="menu-2">
                 <div class="menu-box"><select aria-label="Select a make" name="makeId">
-                        <option selected="" value="0">브랜드</option>
-                        <option value="20001">Acura</option>
-                        <option value="20047">Alfa Romeo</option>
-                        <option value="20002">Am General</option>
-                        <option value="20003">Aston Martin</option>
-                        <option value="20049">Audi</option>
-                        <option value="20050">Avanti Motors</option>
-                        <option value="20051">Bentley</option>
-                        <option value="20005">BMW</option>
-                        <option value="33583">Bugatti</option>
-                        <option value="20006">Buick</option>
-                        <option value="20052">Cadillac</option>
-                        <option value="20053">Chevrolet</option>
-                        <option value="20008">Chrysler</option>
-                        <option value="20009">Daewoo</option>
-                        <option value="20055">Daihatsu</option>
-                        <option value="20012">Dodge</option>
-                        <option value="20058">Eagle</option>
-                        <option value="20014">Ferrari</option>
-                        <option value="20060">FIAT</option>
-                        <option value="41703">Fisker</option>
-                        <option value="20015">Ford</option>
-                        <option value="35354491">Genesis</option>
-                        <option value="20062">Geo</option>
-                        <option value="20061">GMC</option>
-                        <option value="20017">Honda</option>
-                        <option value="20018">Hummer</option>
-                        <option value="20064">Hyundai</option>
-                        <option value="20019">INFINITI</option>
-                        <option value="20065">International</option>
-                        <option value="20020">Isuzu</option>
-                        <option value="20066">Jaguar</option>
-                        <option value="20021">Jeep</option>
-                        <option value="36365359">Karma</option>
-                        <option value="20068">Kia</option>
-                        <option value="33663">Koenigsegg</option>
-                        <option value="20069">Lamborghini</option>
-                        <option value="20024">Land Rover</option>
-                        <option value="20070">Lexus</option>
-                        <option value="20025">Lincoln</option>
-                        <option value="20071">Lotus</option>
-                        <option value="20072">Maserati</option>
-                        <option value="20027">Maybach</option>
-                        <option value="20073">Mazda</option>
-                        <option value="47903">McLaren</option>
-                        <option value="20028">Mercedes-Benz</option>
-                        <option value="20074">Mercury</option>
-                        <option value="20075">MINI</option>
-                        <option value="20030">Mitsubishi</option>
-                        <option value="20076">Morgan</option>
-                        <option value="20077">Nissan</option>
-                        <option value="20032">Oldsmobile</option>
-                        <option value="20079">Panoz</option>
-                        <option value="20034">Peugeot</option>
-                        <option value="20080">Plymouth</option>
-                        <option value="20035">Pontiac</option>
-                        <option value="20081">Porsche</option>
-                        <option value="20036">Qvale</option>
-                        <option value="44763">RAM</option>
-                        <option value="20037">Rolls-Royce</option>
-                        <option value="20038">Saab</option>
-                        <option value="20084">Saleen</option>
-                        <option value="20039">Saturn</option>
-                        <option value="20085">Scion</option>
-                        <option value="20228">smart</option>
-                        <option value="33584">Spyker</option>
-                        <option value="20040">Sterling</option>
-                        <option value="20041">Subaru</option>
-                        <option value="20042">Suzuki</option>
-                        <option value="28263">Tesla</option>
-                        <option value="20088">Toyota</option>
-                        <option value="20089">Volkswagen</option>
-                        <option value="20044">Volvo</option>
-                        <option value="20045">Yugo</option>
+                        <option selected="" value="0">ALL BRANDS</option>
+                        <option value="">ALLTIMERS</option>
+                        <option value="">ARIES</option>
+                        <option value="">ASICS</option>
+                        <option value="">BRIXTON</option>
+                        <option value="">BLUEY</option>
+                        <option value="">CARHARTT WIP</option>
+                        <option value="">CAV EMPT</option>
+                        <option value="">CONVERSE</option>
+                        <option value="">DEUS EX MACHINA</option>
+                        <option value="">EYTYS</option>
+                        <option value="">FACETASM</option>
+                        <option value="">HUMAN MADE</option>
+                        <option value="">I-D MAGAZINE</option>
+                        <option value="">LIAM HODGES</option>
+                        <option value="">LIFUL MINIMAL GARMENTS</option>
+                        <option value="">LMC</option>
+                        <option value="">MIRKO BUFFINI</option>
+                        <option value="">NEW BALANCE</option>
+                        <option value="">NIKE</option>
+                        <option value="">OBEY</option>
+                        <option value="">PUBLICATIONS</option>
+                        <option value="">PATTA</option>
+                        <option value="">R13</option>
+                        <option value="">RICCARDO</option>
+                        <option value="">ROA</option>
+                        <option value="">STONE ISLAND</option>
+                        <option value="">THISISNEVERTHAT</option>
+                        <option value="">VANS</option>
+                        <option value="">WORKSOUT</option>
                     </select></div>
             </div>
             <div class="menu-3">
                 <div class="menu-box"><select aria-label="Select a model" name="modelId">
-                        <option selected="" value="0">시즌</option>
-                        <option value="20392">3000GT</option>
-                        <option value="21011">Diamante</option>
-                        <option value="21037">Eclipse</option>
-                        <option value="36362434">Eclipse Cross</option>
-                        <option value="21060">Endeavor</option>
-                        <option value="21089">Expo</option>
-                        <option value="21189">Galant</option>
-                        <option value="45843">i-MiEV</option>
-                        <option value="21361">Lancer</option>
-                        <option value="21379">Lancer Evolution</option>
-                        <option value="21368">Lancer Sportback</option>
-                        <option value="21466">Mirage</option>
-                        <option value="34227059">Mirage G4</option>
-                        <option value="21676">Montero</option>
-                        <option value="21705">Montero Sport</option>
-                        <option value="21742">Outlander</option>
-                        <option value="36369778">Outlander PHEV</option>
-                        <option value="35966">Outlander Sport</option>
-                        <option value="21775">Pickup</option>
-                        <option value="21789">Precis</option>
-                        <option value="21854">Raider</option>
+                        <option selected="" value="0">SEASON</option>
+                        <option value="">F/W 18</option>
+                        <option value="">S/S 19</option>
                     </select></div>
             </div>
             <div class="menu-4">
-                <div class="menu-box"><select aria-label="Select a maximum price" name="priceMax">
-                        <option selected="" value="0">컬러</option>
-                        <option value="2000">$2,000</option>
-                        <option value="4000">$4,000</option>
-                        <option value="6000">$6,000</option>
-                        <option value="8000">$8,000</option>
-                        <option value="10000">$10,000</option>
-                        <option value="15000">$15,000</option>
-                        <option value="20000">$20,000</option>
-                        <option value="25000">$25,000</option>
-                        <option value="30000">$30,000</option>
-                        <option value="35000">$35,000</option>
-                        <option value="40000">$40,000</option>
-                        <option value="45000">$45,000</option>
-                        <option value="50000">$50,000</option>
-                        <option value="60000">$60,000</option>
-                        <option value="70000">$70,000</option>
-                        <option value="80000">$80,000</option>
-                        <option value="90000">$90,000</option>
-                        <option value="100000">$100,000</option>
-                        <option value="125000">$125,000</option>
-                        <option value="150000">$150,000</option>
-                        <option value="175000">$175,000</option>
-
-                    </select></div>
-            </div>
-            <div class="menu-5">
                 <div class="menu-box"><select aria-label="Select a maximum distance" name="radius">
-                        <option selected="" value="20">가격대</option>
-                        <option value="30">재고있음</option>
-                        <option value="40">품절상품 포함</option>
+                        <option selected="" value="0">PRICE</option>
+                        <option value="">~10,000 WON</option>
+                        <option value="">~20,000 WON</option>
+                        <option value="">~30,000 WON</option>
+                        <option value="">~40,000 WON</option>
+                        <option value="">~50,000 WON</option>
+                        <option value="">~60,000 WON</option>
+                        <option value="">~70,000 WON</option>
+                        <option value="">~80,000 WON</option>
+                        <option value="">80,000 WON~</option>
+
                     </select></div>
             </div>
             <p></p>
             <div class="search">
                 <div class="search-1"><input type="tel" aria-label="Enter a Zip Code" name="zip" value="" placeholder="" maxlength="5" class="in1"></div>
             </div>
-            <div class="search-2"><input type="submit" value="🔎" data-linkname="Search Blended" class="in2"></div>
+            <div class="search-2"><input type="submit" value="🔎" data-linkname="Search Blended" class="in2">
+
+            </div>
         </div>
     </div>
+    <div class="top2">
+        <a class="shop title" href="#">WORKS OUT@</a>
+        <p></p>
+        <a class="shop li" href="#">shop</a>
+        <p></p>
+        <a class="shop li" href="#">works out@ spring 19</a>
+        <p></p>
+        <a class="shop li" href="#">archive</a>
+        <p></p>
+        <p></p>
+        <img src="img/i-ins_w.png" alt="instagram">
+        <img src="img/i-fb_w.png" alt="facebook">
+        <img src="img/i-v_w.png" alt="vimeo">
+    </div>
+
 
 </body></html>
