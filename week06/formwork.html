@@ -1,216 +1,515 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+ 
+
 <head>
+
     <meta charset="UTF-8">
+
     <mata name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Document</title>
+
+    <title>WORKSOUT</title>
+
+    <script>
+        var CA;
+
+
+
+        function team(obj) {
+
+            var name_a = [];
+
+            var name_b = ["TOP", "BOTTOM", "BAGS", "HEADWEAR"];
+
+            var name_c = ["TOP", "OUTER", "BOTTOM"];
+
+            var name_d = ["TOP", "OUTER", "BOTTOM", "SHOES", "BAGS"];
+
+            var name_e = ["TOP", "OUTER", "BOTTOM", "SHOES", "BAGS", "HEADWEAR"];
+
+            var target = document.getElementById("namex");
+
+            if (obj.value == "a") {
+
+                var k = name_a;
+
+                CA = "BRANDS";
+
+            } else if (obj.value == "b") {
+
+                var k = name_b;
+
+                CA = "DEUS EX MACHINA";
+
+            } else if (obj.value == "c") {
+
+                var k = name_c;
+
+                CA = "LIFUL";
+
+            } else if (obj.value == "d") {
+
+                var k = name_d;
+
+                CA = "NEW BALANCE";
+
+            } else if (obj.value == "e") {
+
+                var k = name_e;
+
+                CA = "NIKE";
+
+            }
+
+            target.options.length = 0;
+
+            for (x in k) {
+
+                var opt = document.createElement("option");
+
+                opt.value = k[x];
+
+                opt.innerHTML = k[x];
+
+                target.appendChild(opt);
+
+            }
+
+            document.getElementById("getd").innerHTML = "BRANDS / CATEGORIES";
+
+        }
+
+
+
+        function gett(ftm) {
+
+            document.getElementById("getd").innerHTML = CA + " / " + ftm.value;
+
+        }
+    </script>
+
+
+
     <style>
         @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
         a {
+
             color: inherit;
+
             text-decoration: none;
+
         }
+
+
 
         html {
+
             font-family: "Noto Sans KR", sans-serif;
+
         }
+
+
 
         .con {
+
             float: left;
+
         }
+
+
 
         .row {
+
             content: "";
+
             display: block;
+
             clear: both;
+
         }
+
+
 
         body {
+
             background-image: url('https://gmleoWKd.github.io/ggg.JPG');
+
             background-size: cover;
+
         }
+
+
 
         .top-menu {
+
             display: inline-block;
+
             vertical-align: top;
+
             border-radius: 10px;
+
             text-align: left;
+
             padding: 50px;
+
             width: 300px;
+
             height: auto;
+
             margin-top: 30px;
+
             margin-left: -30px;
+
         }
+
+
 
         .menu-box {
+
             position: relative;
+
             display: inline-block;
+
             width: 100%;
+
         }
 
+
+
         select {
+
             font-size: 11px;
+
             display: inline-block;
+
             width: 200px;
+
             cursor: pointer;
+
             padding: 10px 15px;
+
             outline: 0;
+
             border: 0;
+
             border-radius: 0;
+
             appearance: none;
+
             font-weight: 800;
 
         }
 
+
+
         select:hover {
+
             background-color: black;
+
             color: white;
-            transition: color 1s;
+
+            transition: color 0.5s;
+
         }
+
+
 
         input {
+
             border: 10px;
+
             background-color: inherit;
+
             border: solid 2px white;
+
             display: block;
+
             float: left;
+
             margin-right: 5px;
+
             background-color: white;
+
         }
+
+
 
         .in2 {
+
             font-size: 12px;
+
             height: 30px;
+
             width: 30px;
+
             cursor: pointer;
+
             background-color: white;
+
             color: black;
+
             margin-top: -4.px;
+
             margin-left: 5px;
+
             border-radius: 100px;
+
         }
+
+
 
         .in1 {
+
             height: 29px;
+
         }
+
+
 
         .works {
+
             position: absolute;
+
             top: 30px;
+
             left: 30px;
+
             font-weight: bold;
+
             color: white;
+
         }
+
+
 
         .top2 {
+
             display: block;
+
             text-align: center;
+
             padding-top: 400px;
+
         }
+
+
 
         .shop {
+
             color: white;
+
             font-size: 15px;
+
         }
+
+
 
         .title {
+
             font-weight: bold;
+
             font-size: 20px;
+
         }
+
+
 
         .li:hover {
+
             color: #dddddd;
+
             text-decoration: underline;
+
         }
+
+
 
         .ig {
+
             width: 30px;
+
         }
 
+
+
         .ig:hover {
+
             transform: rotate(20deg);
+
             transition: transform 0.5s;
+
+        }
+
+        .menu-5 {
+
+            background-color: white;
+
+            width: 200px;
+            
+            font-size: 16px;
+
+        }
+        
+        .hl {
+            
+            font-weight: bold;
+
+            font-size: 13px;
+            
+            text-align: center;
+            
+            
+            background-color: black;
+            
+            color: white;
+        }
+        
+        .title {
+            margin-right: 350px;
         }
     </style>
 
+
+
 </head>
 
+
+
 <body>
+
     <div class="row">
+
         <div class="top-menu con">
+
             <div class="menu-1">
+
                 <a class="works" href="http://worksout.co.kr/front/main.do">WORKS OUT@</a>
+
                 <div class="menu-box">
-                    <select title="" onchange="window.open(value,'_self');" name="CA">
-                        <option selected="" value="#">CATEGORIES</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&oneDepth=19SS&twoDepth=SW&orderFlag=&orderBy=&brand=">TOP</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&oneDepth=19SS&twoDepth=JA&orderFlag=&orderBy=&brand=">OUTER</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&oneDepth=19SS&twoDepth=PA&orderFlag=&orderBy=&brand=">BOTTOM</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&oneDepth=19SS&twoDepth=BA&orderFlag=&orderBy=&brand=">BAG</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&oneDepth=19SS&twoDepth=SE&orderFlag=&orderBy=&brand=">SHOES</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&oneDepth=19SS&twoDepth=UN&orderFlag=&orderBy=&brand=">UNDERWEAR</option>
+
+                    <select id="teamx" onchange="team(this);" name="BR">
+
+                        <option selected="a" value="#">BRANDS</option>
+
+                        <option value="b">DEUS EX MACHINA</option>
+
+                        <option value="c">LIFUL </option>
+
+                        <option value="d">NEW BALANCE</option>
+
+                        <option value="e">NIKE</option>
+
                     </select></div>
+
             </div>
+
             <div class="menu-2">
-                <div class="menu-box"><select title="" onchange="window.open(value,'_self');" name="BR">
-                        <option selected="" value="#">BRANDS</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=AS&oneDepth=19SS&orderFlag=&orderBy=">ASICS</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=CA&oneDepth=19SS&orderFlag=&orderBy=">CARHARTT WIP</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=DE&oneDepth=19SS&orderFlag=&orderBy=">DEUS EX MACHINA</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=HU&oneDepth=19SS&orderFlag=&orderBy=">HUMAN MADE</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=LF&oneDepth=19SS&orderFlag=&orderBy=">LIFUL MINIMAL GARMENTS</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=MS&oneDepth=19SS&orderFlag=&orderBy=">MINDSEEKER</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=NB&oneDepth=19SS&orderFlag=&orderBy=">NEW BALANCE</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=NK&oneDepth=19SS&orderFlag=&orderBy=">NIKE</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=OB&oneDepth=19SS&orderFlag=&orderBy=">OBEY</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=PT&oneDepth=19SS&orderFlag=&orderBy=">PATTA</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=SI&oneDepth=19SS&orderFlag=&orderBy=">STONE ISLAND</option>
-                        <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=VS&oneDepth=19SS&orderFlag=&orderBy=">VANS</option>
-                    </select></div>
+
+                <div class="menu-box">
+
+                    <select id="namex" name="name" onchange="gett(this)">
+
+                        <option selected="" value="#">CATEGORIES</option>
+
+                    </select>
+
+                </div>
+
             </div>
+
             <div class="menu-3">
-                <div class="menu-box"><select title="" onchange="window.open(value,'_self');" name="SE">
+
+                <div class="menu-box">
+
+                    <select title="" onchange="window.open(value,'_self');" name="SE">
+
                         <option selected="" value="#">SEASON</option>
+
                         <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?oneDepth=OUTLET&nowSeq=216">F/W 18</option>
+
                         <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?oneDepth=19SS&newArvl=Y&sex=M">S/S 19</option>
+
                     </select></div>
+
             </div>
+
             <div class="menu-4">
+
                 <div class="menu-box"><select title="" onchange="window.open(value,'_self');" name="GE">
+
                         <option selected="" value="#">GENDER</option>
+
                         <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=M&brand=&oneDepth=19SS&twoDepth=&threeDepth=&orderFlag=&orderBy=">MAN</option>
+
                         <option value="http://worksout.co.kr/front/onlineShop/goodsList.do?sex=W&brand=&oneDepth=19SS&twoDepth=&threeDepth=&orderFlag=&orderBy=">WOMAN</option>
 
                     </select></div>
+
+            </div>
+
+
+
+            <div class="menu-5">
+
+                <legend class="hl">RESULT</legend>
+
+                <p id="getd"></p>
+
             </div>
 
             <br />
+
             <div class="search">
+
                 <form method=get action="http://worksout.co.kr/front/search/search.do?searchText=" target="_blank">
+
                     <input type="text" name="zip" value="" placeholder="" class="in1">
+
+
 
                     <input type="image" src="https://gmleoWKd.github.io/ico.jpg" data-linkname="Search Blended" class="in2">
 
+
+
                 </form>
+
             </div>
+
         </div>
+
     </div>
+
     <div class="top2">
+
         <a class="shop title" href="http://worksout.co.kr/front/main.do">WORKS OUT@</a>
+
         <br /><br />
+
         <a class="shop li" href="http://worksout.co.kr/front/onlineShop/goodsList.do?oneDepth=19SS&newArvl=Y&sex=M" target="_blank">shop</a>
+
         <p></p>
+
         <a class="shop li" href="http://worksout.co.kr/front/lookbook/list.do" target="_blank">works out@ spring 19</a>
+
         <p></p>
+
         <a class="shop li" href="http://worksout.co.kr/front/news/newsList.do" target="_blank">NEWS</a>
+
         <p></p>
+
         <p></p>
+
         <a href="https://www.instagram.com/" target="_blank"><img src="https://gmleoWKd.github.io/i-ins_w.png" alt="instagram" class="ig"></a>
+
         <a href="https://www.facebook.com/" target="_blank"><img src="https://gmleoWKd.github.io/i-fb_w.png" alt="facebook" class="ig"></a>
+
         <a href="https://vimeo.com/ko/" target="_blank"><img src="https://gmleoWKd.github.io/i-v_w.png" alt="vimeo" class="ig"></a>
+
     </div>
+
 
 
 </body></html>
