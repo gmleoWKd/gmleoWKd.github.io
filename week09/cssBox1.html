@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div.box1{
+            display: block;
+            width: 300px;
+            padding: 10px;
+            border: 5px dotted gray;
+            margin: 0;
+        }
+        div.box2{
+            box-sizing: border-box;
+            display: block;
+            width: 300px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0;
+        }
+        div.container{
+            box-sizing: border-box;
+            width: 50%;
+            border: 1px solid red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <img src="../images/lobster.png" alt="랍스터" width="300" height="200">
+    <div class="box1">위랍스터 그림 콘텐트의 크기는 300*200인 반면 지금 읽고 있는 엘리먼트의 크기는 콘텐트 폭 300, 패딩 20, 보더 10을 더한 330입니다.</div>
+    <p></p>
+    <div class="box2">하지만, box-sizing의 border-box 속성값을 사용하면 콘텐트, 패딩, 보더 포함하여 그림과 같이 너비가 300이 됩니다.</div>
+    <div class="container">
+    <img src="../images/lobster.png" alt="">
+    <img src="../images/lobster.png" alt="">
+    <div style="clear:both"></div>
+    </div>
+    <div class="container">
+    <img src="../images/lobster.png" alt="" class="box3">
+    <img src="../images/lobster.png" alt="" class="box3">
+    <div style="clear:both"></div>
+    </div>      
+</body>
+</html>
