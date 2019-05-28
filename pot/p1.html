@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.default.min.css">
+
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    
+    <style>
+        @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+        html {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        body,
+        ul,
+        li,
+        h1 {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 라이브러리 */
+        .con {
+            margin: 0 auto;
+        }
+
+        .img-box>img {
+            width: 100%;
+            display: block;
+        }
+
+        .row::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .cell {
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .cell-right {
+            float: right;
+            box-sizing: border-box;
+        }
+
+        .margin-0-auto {
+            margin: 0 auto;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .text-align-center {
+            text-align: center;
+        }
+
+        .line-height-0-ch-only {
+            line-height: 0;
+        }
+
+        .line-height-0-ch-only>* {
+            line-height: normal;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute-left {
+            position: absolute;
+            left: 0;
+        }
+
+        .absolute-right {
+            position: absolute;
+            right: 0;
+        }
+
+        .absolute-middle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .absolute-bottom {
+            position: absolute;
+            bottom: 0;
+        }
+
+        /* 커스텀 */
+
+        .con {
+            max-width: 1136px;
+        }
+
+        .con-min-width {
+            min-width: 320px;
+        }
+
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
+        /* 탑박스 시작 */
+        .top-box {
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        body {
+            margin-top: 100px;
+        }
+
+        /* 탑박스 끝 */
+
+        /* 탑바 시작 */
+        .top-bar {
+            border-bottom: 1px solid #dbdbdb;
+            position: relative;
+            z-index: 1;
+            background-color: white;
+        }
+
+        /* 탑바 - 로고 */
+        .top-bar .logo {
+            background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v3/icon-etc.png);
+            width: 74px;
+            height: 30px;
+            background-position: -100px -316px;
+            margin-top: 25px;
+        }
+
+        /* 탑바 - 메뉴 1 */
+        .top-bar .menu-1 {
+            margin-left: 30px;
+        }
+
+        .top-bar .menu-1>ul>li>a {
+            color: #424242;
+            font-size: 18px;
+            padding: 25px 20px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .top-bar .menu-1>ul>li.active>a {
+            color: #35c5f0;
+        }
+
+        .top-bar .menu-1>ul>li>a::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #dbdbdb;
+            border-left: 1px solid #dbdbdb;
+            background-color: white;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-6px) rotate(45deg) skew(20deg, 20deg);
+            display: none;
+        }
+
+        .top-bar .menu-1>ul>li.active>a::after {
+            display: block;
+        }
+
+        /* 탑바 - 서치박스 */
+        .top-bar .search-box {
+            border: 1px solid #dbdbdb;
+            width: 266px;
+            border-radius: 5px;
+            margin-top: 19px;
+            margin-right: 10px;
+        }
+
+        .top-bar .search-box>.ico.ico-search {
+            background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v3/icon-etc.png);
+            width: 22px;
+            height: 22px;
+            margin-left: 5px;
+            background-position: 0 -121px;
+        }
+
+        .top-bar .search-box>input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            padding: 10px 10px 10px 35px;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+
+        .top-bar .search-box .search-option-menu {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            background-color: white;
+            border: 1px solid #dbdbdb;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        .top-bar .search-box.option-mode .search-option-menu {
+            display: block;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>span {
+            color: #424242;
+            font-size: 13px;
+            margin-left: 10px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li:hover {
+            background-color: whitesmoke;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico {
+            background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v3/icon-shortcut.png);
+            width: 22px;
+            height: 22px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-1 {
+            background-position: -39px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-2 {
+            background-position: 0px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-3 {
+            background-position: -79px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-4 {
+            background-position: -199px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-5 {
+            background-position: -157px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-6 {
+            background-position: -365px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-7 {
+            background-position: -323px 0px;
+        }
+
+        .top-bar .search-box .search-option-menu>ul>li>.ico.ico-8 {
+            background-position: -281px 0px;
+        }
+
+        /* 탑바 - 글쓰기 버튼 */
+        .top-bar .btn-write {
+            border: 1px solid #35C5F0;
+            color: #09ADDB;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 16px;
+            padding: 6px 20px;
+            transition: color 0.21, background-color 0.1s;
+            cursor: pointer;
+            margin-top: 19px;
+            margin-right: 10px;
+        }
+
+        .top-bar .btn-write:hover {
+            color: white;
+            background-color: #35C5F0;
+        }
+
+        /* 탑바 - 장바구니 버튼 */
+        .top-bar .btn-cart {
+            padding: 8px;
+            border-radius: 50%;
+            margin-top: 16px;
+            transition: background-color 0.1s;
+            cursor: pointer;
+        }
+
+        .top-bar .btn-cart:hover {
+            background-color: #35C5F0;
+        }
+
+        .top-bar .btn-cart .ico.ico-cart {
+            background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v3/icon-etc.png);
+            width: 22px;
+            height: 22px;
+            background-position: -100px -121px;
+        }
+
+        .top-bar .btn-cart:hover .ico.ico-cart {
+            background-position: -156px -121px;
+        }
+
+        /* 탑바 - 메뉴 2 */
+        .top-bar .menu-2 {
+            margin-top: 26px;
+        }
+
+        .top-bar .menu-2>ul>li>a {
+            color: #757575;
+            font-weight: bold;
+            font-size: 15px;
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .top-bar .menu-2>ul>li:hover>a {
+            text-decoration: underline;
+        }
+
+        .top-bar .menu-2>ul>li:last-child>a {
+            padding-right: 0;
+        }
+
+        .top-bar .menu-2>ul>li:not(:last-child)>a::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 1px;
+            height: 10px;
+            transform: translateY(-50%);
+            background-color: #757575;
+            right: 0;
+        }
+
+        /* 탑바 끝 */
+
+        /* 서브메뉴바 시작 */
+        .sub-menu-bar {
+            border-bottom: 1px solid #dfdfdf;
+            background-color: white;
+        }
+
+        .sub-menu-bar .menu-1 {
+            margin-left: -10px;
+        }
+
+        .sub-menu-bar::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 42px;
+            z-index: -1;
+
+        }
+
+        .sub-menu-bar .menu-1>ul {
+            display: none;
+        }
+
+        .sub-menu-bar .menu-1>ul.active {
+            display: block;
+        }
+
+        .sub-menu-bar .menu-1>ul>li>a {
+            font-weight: 700;
+            color: #424242;
+            font-size: 15px;
+            padding: 10px;
+        }
+
+        .sub-menu-bar .btn-down-app {
+            margin-top: 10px;
+        }
+
+        .sub-menu-bar .btn-down-app>.ico.ico-app {
+            margin-top: 2px;
+            background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v3/icon-etc.png);
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            background-position: -242px -121px;
+        }
+
+        .sub-menu-bar .btn-down-app>span {
+            font-weight: 700;
+            color: #757575;
+            font-size: 15px;
+            margin-left: 5px;
+        }
+
+        .sub-menu-bar .btn-down-app>span::after {
+            content: "앱다운로드";
+        }
+
+        .sub-menu-bar .menu-1 .ico.ico-new::after {
+            content: "N";
+            padding: 0px 5px;
+            border-radius: 50%;
+            background-color: #FF8686;
+            color: white;
+            font-size: 12px;
+            position: relative;
+            top: -1px;
+            left: -3px;
+        }
+
+        .sub-menu-bar .menu-1 ul>li:hover>a {
+            color: #09ADDB;
+        }
+
+        .sub-menu-bar .menu-1>ul>li>.sub-menu-type-1 {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            transition: transform .3s;
+            transform: translateY(-100%);
+            z-index: -2;
+            background-color: white;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .sub-menu-bar .menu-1>ul>li:hover>.sub-menu-type-1 {
+            transform: translateY(0);
+        }
+
+        .sub-menu-bar .menu-1>ul>li>.sub-menu-type-1>.con>ul {
+            margin: 0 -38px;
+        }
+
+        .sub-menu-bar .menu-1>ul>li>.sub-menu-type-1>.con>ul>li {
+            width: calc(100% / 9);
+            text-align: center;
+        }
+
+        .sub-menu-bar .menu-1>ul>li>.sub-menu-type-1>.con>ul>li>.img-box {
+            padding: 0 25px;
+        }
+
+        /* 서브메뉴바 끝 */
+
+        /* 메뉴 바 3 시작 */
+        .menu-bar-3 {
+            margin-top: 30px;
+        }
+
+        .menu-bar-3 .menu-1>ul {
+            margin: 0 -10px;
+        }
+
+        .menu-bar-3 .menu-1>ul>li {
+            width: calc(100% / 6);
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .menu-bar-3 .menu-1>ul>li>h1 {
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .menu-bar-3 .menu-1>ul>li>div {
+            font-size: 13px;
+            color: #757575;
+        }
+
+        .menu-bar-3 .menu-1>ul>li>h1,
+        .menu-bar-3 .menu-1>ul>li>div {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .menu-bar-3 .menu-1>ul>li:hover>h1,
+        .menu-bar-3 .menu-1>ul>li:hover>div {
+            text-decoration: underline;
+        }
+
+        .menu-bar-3 .menu-1>ul>li>.img-box {
+            background-color: whitesmoke;
+            border-radius: 20px;
+        }
+
+        .menu-bar-3 .menu-1>ul>li>.img-box>img {
+            transition: transform 0.2s;
+        }
+
+        .menu-bar-3 .menu-1>ul>li:hover>.img-box>img {
+            transform: scale(1.2);
+        }
+
+        /* 메뉴 바 3 끝 */
+
+        /* 탑 배너 박스 1 시작 */
+
+        .top-bn-box-1 {
+            margin-top: 30px;
+        }
+
+        /* 탑 배너 박스 1 - 이미지 박스 */
+
+        .top-bn-box-1 {}
+
+        .top-bn-box-1::after {
+            content: "";
+            display: block;
+            padding-top: 43%;
+        }
+
+        .top-bn-box-1>.row {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .top-bn-box-1>.row>div {
+            height: 100%;
+        }
+
+        .top-bn-box-1>.row>.cell {
+            width: calc(75% - 5px);
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box {
+            height: 100%;
+            background-position: center;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            transition: background-size 0.1s;
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box:hover {
+            background-size: 110%;
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box {
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box .txt-box {
+            color: white;
+            margin: 50px;
+            font-weight: bold;
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box .btn-go-detail-page {
+            margin: 50px;
+            padding: 15px 25px;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid white;
+            font-weight: bold;
+            transition: background-color, border-color 0.2s;
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box:hover .btn-go-detail-page {
+            background-color: #35c5f0;
+            border-color: #35c5f0;
+        }
+
+        .top-bn-box-1>.row>.cell>.img-box::before {
+            content: "";
+            position: absolute;
+            background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 160px;
+        }
+
+        .top-bn-box-1>.row>.cell-right {
+            width: calc(25% - 5px);
+
+        }
+
+        .carousel-1 {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-1,
+        .carousel-1>.owl-carousel,
+        .carousel-1>.owl-carousel>.owl-stage-outer,
+        .carousel-1>.owl-carousel>.owl-stage-outer>.owl-stage,
+        .carousel-1>.owl-carousel>.owl-stage-outer>.owl-stage>.owl-item,
+        .carousel-1>.owl-carousel>.owl-stage-outer>.owl-stage>.owl-item>.item {
+            height: 100%;
+        }
+
+        .carousel-1 .item {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .carousel-1 .owl-nav {
+            margin: 0 !important;
+        }
+
+        .carousel-1 .owl-nav>div {
+            padding: 0 !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            background-color: transparent !important;
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            font-size: 2rem !important;
+        }
+
+        .carousel-1 .owl-nav>div.owl-next {
+            left: auto;
+            right: 5px;
+        }
+
+        .carousel-1 .owl-dots {
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            right: 30px;
+        }
+
+        .carousel-1 .owl-dots {
+            line-height: 0 !important;
+            padding: 10px 0 !important;
+        }
+
+        .carousel-1 .owl-dots>.owl-dot>span {
+            margin: 4px !important;
+        }
+
+        /* 탑 배너 박스 1 끝 */
+
+        /* 오늘의 스토리 시작 */
+        .today-story-box {
+            margin-top: 30px;
+        }
+
+        /* 오늘의 스토리 - 리스트 1 */
+        .today-story-box>.list-1 {
+            width: calc(75% - 10px);
+        }
+
+        .today-story-box>.list-1>ul>li {
+            width: calc(33.3333% - 13.3333px);
+        }
+
+        .today-story-box>.list-1>ul>li:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        .today-story-box>.list-1>ul>li>a>.img-box {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .today-story-box>.list-1>ul>li:hover>a>.img-box>img {
+            transition: transform 0.2s;
+        }
+
+        .today-story-box>.list-1>ul>li:hover>a>.img-box>img {
+            transform: scale(1.1);
+        }
+
+        .today-story-box>.list-1>ul>li>a>.title {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .today-story-box>.list-1>ul>li:hover>a>.title {
+            text-decoration: underline;
+        }
+
+        .today-story-box>.list-1>ul>li>a>.writer {
+            margin-top: 10px;
+        }
+
+        .today-story-box>.list-1>ul>li>a>.writer>.img-box {
+            width: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .today-story-box>.list-1>ul>li>a>.writer>.writer-name {
+            font-size: 13px;
+            margin-top: 3px;
+            margin-left: 10px;
+        }
+
+        /* 오늘의 스토리 - 리스트 2 */
+        .today-story-box>.list-2 {
+            width: calc(25% - 10px);
+        }
+
+        .today-story-box>.list-2>ul>li>a {
+            background-color: #ededed;
+            border-radius: 10px;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        .today-story-box>.list-2>ul>li>a::after {
+            content: "";
+            background-image: url(https://d1nyaccf3kuclt.cloudfront.net/assets/icon_map/v4/page-home.png);
+            background-position: -240px 0px;
+            width: 5px;
+            height: 8px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+        }
+
+        .today-story-box>.list-2>ul>li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .today-story-box>.list-2>ul>li>a>.des {
+            color: #757575;
+            font-size: 12px;
+        }
+
+        .today-story-box>.list-2>ul>li>a>h1 {
+            color: #424242;
+            font-size: 15px;
+        }
+
+        .today-story-box>.list-2>ul>li:hover>a>* {
+            text-decoration: underline;
+        }
+
+        /* 오늘의 스토리 끝 */
+
+        /* 임시 코드 */
+        body {
+            min-height: 100vh;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="top-box con-min-width">
+        <div class="top-bar">
+            <div class="con row">
+                <a href="#" class="logo block cell"></a>
+                <nav class="menu-1 cell">
+                    <ul class="row">
+                        <li class="cell selected active"><a href="#" class="block">커뮤니티</a></li>
+                        <li class="cell"><a href="#" class="block">스토어</a></li>
+                        <li class="cell"><a href="#" class="block">전문가</a></li>
+                    </ul>
+                </nav>
+                <nav class="menu-2 cell-right">
+                    <ul class="row">
+                        <li class="cell"><a href="#" class="block">로그인</a></li>
+                        <li class="cell"><a href="#" class="block">회원가입</a></li>
+                    </ul>
+                </nav>
+                <div class="btn-cart cell-right">
+                    <div class="ico ico-cart"></div>
+                </div>
+                <div class="btn-write cell-right">
+                    글쓰기
+                </div>
+                <form class="search-box cell-right relative block">
+                    <div class="ico ico-search absolute-left absolute-middle"></div>
+                    <input type="text" class="block" placeholder="검색">
+                    <nav class="search-option-menu">
+                        <ul>
+                            <li class="row">
+                                <div class="ico ico-1 cell"></div><span class="cell">사진 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-2 cell"></div><span class="cell">집들이 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-3 cell"></div><span class="cell">노하우 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-4 cell"></div><span class="cell">가구소품 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-5 cell"></div><span class="cell">스토어 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-6 cell"></div><span class="cell">질문 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-7 cell"></div><span class="cell">유저 검색</span>
+                            </li>
+                            <li class="row">
+                                <div class="ico ico-8 cell"></div><span class="cell">전문가 검색</span>
+                            </li>
+                        </ul>
+                    </nav>
+                </form>
+            </div>
+        </div>
+        <div class="sub-menu-bar row">
+            <div class="con">
+                <nav class="menu-1 cell">
+                    <ul class="row active">
+                        <li class="cell">
+                            <a href="#" class="block">홈</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">사진</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">집들이</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">노하우</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">전문가집들이</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">셀프가이드</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">질문과답변</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">이벤트</a>
+                        </li>
+                    </ul>
+                    <ul class="row">
+                        <li class="cell">
+                            <a href="#" class="block">스토어홈</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">카테고리</a>
+                            <div class="sub-menu-type-1">
+                                <div class="con">
+                                    <ul class="row">
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-0.png/320/320" alt="">
+                                            </a>
+                                            <span>가구</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-1.png/320/320" alt="">
+                                            </a>
+                                            <span>패브릭</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-2.png/320/320" alt="">
+                                            </a>
+                                            <span>홈데코/조명</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-3.png/320/320" alt="">
+                                            </a>
+                                            <span>가전</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-4.png/320/320" alt="">
+                                            </a>
+                                            <span>수납/생활</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-5.png/320/320" alt="">
+                                            </a>
+                                            <span>주방</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-6.png/320/320" alt="">
+                                            </a>
+                                            <span>DIY자재</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-7.png/320/320" alt="">
+                                            </a>
+                                            <span>시공/주문제작</span>
+                                        </li>
+                                        <li class="cell">
+                                            <a href="#" class="img-box block">
+                                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-product_category-8.png/320/320" alt="">
+                                            </a>
+                                            <span>반려동물</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">
+                                신혼가구
+                                <span class="ico ico-new"></span>
+                            </a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">랭킹</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">SALE</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">매일꿀템</a>
+                        </li>
+                    </ul>
+                    <ul class="row">
+                        <li class="cell">
+                            <a href="#" class="block">전문가홈</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">견적계산</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">전문가찾기</a>
+                        </li>
+                        <li class="cell">
+                            <a href="#" class="block">방산시장</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="btn-down-app block cell-right row">
+                    <div class="ico ico-app cell"></div>
+                    <span class="cell"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-bn-box-1 con relative">
+        <div class="row">
+            <div class="cell">
+                <div class="img-box relative" style="background-image:url(https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-exhibitions-cover_image-1555926571082_wmgBNNkZwQ.jpg/1280/768);">
+                    <div class="txt-box absolute-left absolute-bottom">
+                        <div>오늘마감</div>
+                        <h1>첫 구매 1만원 할인혜택!</h1>
+                    </div>
+
+                    <div class="btn-go-detail-page absolute-right absolute-bottom">
+                        보러가기
+                    </div>
+                </div>
+            </div>
+            <div class="cell-right">
+                <div class="carousel-1">
+                    <ul class="owl-carousel owl-theme">
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-contests-pc_banner-1556680920081_cqMxZhxwn.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-banners-home_banner-1556531753654_uLcsLlAunC.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-banners-home_banner-1556499849743_piRrV.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-banners-home_banner-1554259177802_RBKJ.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-banners-home_banner-1554258971963_GrY28.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-banners-home_banner-1556634631881_5iIoL.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-contests-pc_banner-1556680920081_cqMxZhxwn.jpg/850/none);"></li>
+
+                        <li class="item" style="background-image:url(https://image.ohou.se/image/resize/bucketplace-v2-development/uploads-banners-home_banner-1556531753654_uLcsLlAunC.jpg/850/none);"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-bar-3 con">
+        <nav class="menu-1">
+            <ul class="row">
+                <li class="cell">
+                    <nav class="img-box"><img src="https://d1nyaccf3kuclt.cloudfront.net/assets/banners/shortcut/home-short-1.svg" alt=""></nav>
+                    <h1>평수필터</h1>
+                    <div>평수별로 집 구경</div>
+                </li>
+                <li class="cell">
+                    <nav class="img-box"><img src="https://d1nyaccf3kuclt.cloudfront.net/assets/banners/shortcut/home-short-2.svg" alt=""></nav>
+                    <h1>공간필터</h1>
+                    <div>공간별로 사진 보기</div>
+                </li>
+                <li class="cell">
+                    <nav class="img-box"><img src="https://d1nyaccf3kuclt.cloudfront.net/assets/banners/shortcut/home-short-3.svg" alt=""></nav>
+                    <h1>쇼핑하기</h1>
+                    <div>카테고리 쇼핑</div>
+                </li>
+                <li class="cell">
+                    <nav class="img-box"><img src="https://d1nyaccf3kuclt.cloudfront.net/assets/banners/shortcut/home-short-4.svg" alt=""></nav>
+                    <h1>전문가 찾기</h1>
+                    <div>인테리어 시공 필요해요?</div>
+                </li>
+                <li class="cell">
+                    <nav class="img-box"><img src="https://d1nyaccf3kuclt.cloudfront.net/assets/banners/shortcut/home-short-5.svg" alt=""></nav>
+                    <h1>신혼가구</h1>
+                    <div>예신예랑 인기템</div>
+                </li>
+                <li class="cell">
+                    <nav class="img-box"><img src="https://d1nyaccf3kuclt.cloudfront.net/assets/banners/shortcut/home-short-6.svg" alt=""></nav>
+                    <h1>셀프 가이드</h1>
+                    <div>셀프 인테리어 핵심만</div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="today-story-box con row">
+        <div class="list-1 cell">
+            <ul class="row">
+                <li class="cell">
+                    <a href="#" class="block">
+                        <div class="img-box">
+                            <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-advices-cover_images-1556090978915_l4xSlKEN.jpg/640/426" alt="">
+                        </div>
+                        <div class="title">
+                            일룸 신제품으로 꾸민, 공유와 함께 살 신혼집 인테리어
+                        </div>
+                        <div class="writer row">
+                            <div class="img-box cell">
+                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images-1540295374353_0bPz.jpg/72/72" alt="">
+                            </div>
+                            <div class="writer-name cell">
+                                Editor 클레어
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="#" class="block">
+                        <div class="img-box">
+                            <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-projects-cover_images-1556518807422_ojIQAvz.jpg/640/426" alt="">
+                        </div>
+                        <div class="title">
+                            심플하고 깔끔하게 취향과 라이프스타일을 다듬기
+                        </div>
+                        <div class="writer row">
+                            <div class="img-box cell">
+                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-default_images-avatar.png/72/72" alt="">
+                            </div>
+                            <div class="writer-name cell">
+                                그대로그대로
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="#" class="block">
+                        <div class="img-box">
+                            <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-projects-cover_images-1556128619615_Ym825.jpg/640/426" alt="">
+                        </div>
+                        <div class="title">
+                            서로를 배려하는 마음이 묻어나는, 정갈하고 편안한 집
+                        </div>
+                        <div class="writer row">
+                            <div class="img-box cell">
+                                <img src="https://image.ohou.se/image/central_crop/bucketplace-v2-development/uploads-users-profile_images1504652355_.jpeg/72/72" alt="">
+                            </div>
+                            <div class="writer-name cell">
+                                둑디
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="list-2 cell-right">
+            <ul>
+                <li>
+                    <a href="#" class="block">
+                        <div class="sub">예쁜 집 구경하기</div>
+                        <h1>집들이</h1>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block">
+                        <div class="sub">전문가 시공사례</div>
+                        <h1>전문가 집들이</h1>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block">
+                        <div class="sub">인테리어 꿀팁 총 집합</div>
+                        <h1>노하우ㄴㅇㅇㄴ</h1>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // 0.5초 후에 스크롤 최 하단을 내림
+        setTimeout(function() {
+            $(window).scrollTop(100000);
+        }, 500);
+
+
+        $('.top-bar .menu-1 > ul > li').mouseenter(function() {
+            $(this).siblings('.active').removeClass('active');
+            $(this).addClass('active');
+
+            var index = $(this).index();
+
+            $('.sub-menu-bar .menu-1 > ul.active').removeClass('active');
+            $('.sub-menu-bar .menu-1 > ul').eq(index).addClass('active');
+        });
+
+        $('.top-box').mouseleave(function() {
+            $('.top-bar .menu-1 > ul > li:first-child').mouseenter();
+        });
+
+        $('.search-box').click(function() {
+            $(this).toggleClass('option-mode');
+
+            return false; // 자신이 클릭 되었다는 사실을 부모 엘리먼트에게 알리지 않는다.
+        });
+
+        $('body').click(function() {
+            $('.search-box').removeClass('option-mode');
+        });
+
+        $('.carousel-1 > .owl-carousel').owlCarousel({
+            autoplay: true, // 오토 플레이
+            autoplayTimeout: 2000, // 오토 플레이 시에 다음 슬라이드로 넘어가는 주기, 2초
+            autoplayHoverPause: true, // 마우스 올리면 오토 플레이 멈춤
+            loop: true, // 끝에서 다시 처음으로 시작
+            margin: 0,
+            nav: true,
+            navText: ['<i class="fas fa-angle-left"></i>', '<i class="fas fa-angle-right"></i>'],
+            responsive: {
+                0: {
+                    items: 1
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
